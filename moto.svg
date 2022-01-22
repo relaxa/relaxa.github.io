@@ -1,0 +1,136 @@
+
+<svg width="700" height="500" viewBox="0 0 200 200"
+xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+   <defs>
+      
+      <g id="rodas">
+         <circle cx="50" cy="150" r="25" stroke-width="1" />
+			<circle cx="50" cy="150" r="15"
+			stroke="black" stroke-width="1" fill="white"/>
+    <circle cx="150" cy="150" r="25" stroke-width="1" />
+			<circle cx="150" cy="150" r="15"
+			stroke="black" stroke-width="1" fill="white"/>
+            <line x1="50" y1="150" x2="70" y2="130"
+         stroke-linecap="round" style="stroke:black; stroke-width:9"/>
+            <line x1="150" y1="150" x2="120" y2="120"
+         stroke-linecap="round" style="stroke:black; stroke-width:9"/>
+      </g>
+
+      <g id="corpo">
+        <path d="
+            M 25 120  
+            L 50 123
+            Q 55 123 55 125
+            L 80 160
+            Q 80 160 85 160
+            L 115 160
+            Q 120 160 120 150
+            Q 120 125 150 120
+            Q 155 120 155 115
+            L 165 105
+            Q 165 100 160 100
+            L 140 103
+            Q 137 103 137 105
+            L 137 108
+            Q 137 110 136 110
+            L 90 120
+            Q 85 122 80 118
+            L 70 105
+            Q 65 100  70 95
+            L 75 95
+            Q 80 95 80 90
+            Q 80 75 75 75
+            Q 30 80 20 115
+            Q 20 120 25 120
+            "/>
+      </g>
+      <g id ="bikers">
+         <line x1="105" y1="90" x2="125" y2="120"
+         stroke-linecap="round" style="stroke:black; stroke-width:20"/>
+         <circle cx="95" cy="70" r="15" fill="black" stroke-width="1" />
+          <line x1="105" y1="90" x2="70" y2="110"
+         stroke-linecap="round" style="stroke:black; stroke-width:10"/>
+      </g>
+      <g id="mota" >
+         <use xlink:href="#bikers" fill="black"/>
+         <use xlink:href="#rodas" fill="black"/>
+         <use xlink:href="#corpo" fill="black"/>
+      </g>
+      <g id="nuvem" >
+         <path d="
+            M 50 50 
+            Q 40 50 40 40
+            Q 40 30 50 30
+            Q 50 20 60 20
+            Q 70 20 70 30 
+            L 70 34
+            Q 80 34 80 42
+            Q 80 50 70 50 
+            "/>
+      </g>
+
+      <g id="windows">
+         <rect x="0" y="0" width="20" height="20" fill="white" />
+          <line x1="0" y1="10" x2="20" y2="10"
+          style="stroke:black; stroke-width:1"/>
+          <line x1="10" y1="0" x2="10" y2="20"
+          style="stroke:black; stroke-width:1"/>
+      </g>
+
+      <g id="doors">
+         <rect x="0" y="0" width="20" height="30" fill="white"/>
+         <circle cx="3" cy="15" r="2"/>
+      </g>
+
+      <g id="predios" >
+         
+         <rect x="0" y="75" width="75" height="100" fill="black"/>
+         <rect x="100" y="100" width="75" height="75" fill="black"/>
+         <use xlink:href="#windows" transform="translate(10,85)"/>
+         <use xlink:href="#windows" transform="translate(45,85)"/>
+         <use xlink:href="#windows" transform="translate(10,115)"/>
+         <use xlink:href="#windows" transform="translate(45,115)"/>
+         <use xlink:href="#windows" transform="translate(110,115)"/>
+         <use xlink:href="#windows" transform="translate(145,115)"/>
+         <use xlink:href="#windows" transform="translate(110,145)"/>
+         <use xlink:href="#doors" transform="translate(145,145)"/>
+         <use xlink:href="#doors" transform="translate(27.5,145)"/>
+      </g>
+
+
+    </defs>
+      <use xlink:href="#nuvem" fill="black"/>
+      <use xlink:href="#nuvem" fill="black" transform="translate(200,5)"  />
+      <use xlink:href="#nuvem" fill="black" transform="translate(-200,5)"  />
+
+
+      <use xlink:href="#predios" />
+      
+      <use xlink:href="#mota" fill="black" transform="translate(0,25)" />
+
+       <animateTransform 
+        xlink:href="#nuvem"
+		attributeName="transform"
+		attributeType="XML"
+		type="rotate"
+		from="-0.1 50 100000"
+		to="0.1 50 100000"
+		dur="10s"
+		begin="0s"
+		repeatCount="indefinite"
+		fill="freeze"/>
+
+       <animateTransform 
+        xlink:href="#mota"
+		attributeName="transform"
+		attributeType="XML"
+		type="rotate"
+		from="0.2 50 100000"
+		to="-0.2 50 100000"
+		dur="3s"
+		begin="0s"
+		repeatCount="indefinite"
+		fill="freeze"/>
+
+</svg>
